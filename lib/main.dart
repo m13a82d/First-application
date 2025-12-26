@@ -16,7 +16,7 @@ class Welcome extends StatelessWidget
   {
     return MaterialApp
     (
-      theme: ThemeData(fontFamily: 'fonta'),
+      theme: ThemeData(fontFamily: 'fontb'),
       debugShowCheckedModeBanner: false,
       home:Screen1(),
 
