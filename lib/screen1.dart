@@ -1,3 +1,5 @@
+import 'package:firstproject/signinpage.dart';
+import 'package:firstproject/signuppage.dart';
 import 'package:flutter/material.dart';
 
 class Screen1 extends StatelessWidget {
@@ -41,7 +43,19 @@ class Screen1 extends StatelessWidget {
             (
               width: 150,
               height: 40,
-              child: ElevatedButton(onPressed: (){}, 
+              child: ElevatedButton(onPressed: ()
+              {
+                Navigator.push
+                (
+                  context, MaterialPageRoute
+                  (
+                    builder: (context)
+                    {
+                    return Signinpage();
+                    }
+                  ),
+                );
+              }, 
 
               style: TextButton.styleFrom
               (
@@ -62,7 +76,20 @@ class Screen1 extends StatelessWidget {
             (
               child: TextButton
               (
-                onPressed: (){}, 
+                onPressed: 
+                ()
+                {
+                  Navigator.push
+                  (
+                    context, MaterialPageRoute
+                    (
+                      builder: (context)
+                      {
+                        return Signuppage();
+                      }
+                    ),
+                  );
+                }, 
                 child: Text
                 (
                   'SIGN UP',
@@ -75,7 +102,7 @@ class Screen1 extends StatelessWidget {
               ),
             ),
           ],
-        )
+        ),
       ),
     );
   }
