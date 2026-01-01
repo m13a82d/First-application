@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class Forgotpage extends StatelessWidget {
   const Forgotpage({super.key});
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold
