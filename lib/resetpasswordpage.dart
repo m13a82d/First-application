@@ -1,9 +1,9 @@
-import 'package:firstproject/forgotpage.dart';
-import 'package:firstproject/signuppage.dart';
+
+import 'package:firstproject/signinpage.dart';
 import 'package:flutter/material.dart';
 
-class Signinpage extends StatelessWidget {
-  const Signinpage({super.key});
+class Resetpassword extends StatelessWidget {
+  const Resetpassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,51 +32,6 @@ class Signinpage extends StatelessWidget {
               height: 50,
             ),
             SizedBox(height: 40,),
-            Container
-            (
-              decoration: BoxDecoration
-              (
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.white,
-              ),
-              margin: EdgeInsets.all(10),
-              child: TextField
-              (
-                decoration: InputDecoration
-                (
-                  
-                  border: OutlineInputBorder
-                  (
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide
-                    (
-                      width: 2,
-                      color: Color(0xfff1f1fb)
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder
-                  (
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide
-                    (
-                      width: 2,
-                      color: Color(0xfff1f1fb)
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder
-                  (
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: BorderSide
-                    (
-                      width: 2,
-                      color: Color(0xfff1f1fb)
-                    ),
-                  ),
-                  label: Text('Email',),
-                  contentPadding: EdgeInsets.only(left: 35)
-                ),
-              ),
-            ),
             Container
             (
               decoration: BoxDecoration
@@ -130,7 +85,61 @@ class Signinpage extends StatelessWidget {
                 ),
               ),
             ),
-            
+            Container
+            (
+              decoration: BoxDecoration
+              (
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.white,
+              ),
+              margin: EdgeInsets.all(10),
+              child: TextField
+              (
+                decoration: InputDecoration
+                (
+                  
+                  border: OutlineInputBorder
+                  (
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide
+                    (
+                      width: 2,
+                      color: Color(0xfff1f1fb)
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder
+                  (
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide
+                    (
+                      width: 2,
+                      color: Color(0xfff1f1fb)
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder
+                  (
+                    borderRadius: BorderRadius.circular(30),
+                    borderSide: BorderSide
+                    (
+                      width: 2,
+                      color: Color(0xfff1f1fb)
+                    ),
+                  ),
+                  label: Text('Confirm Password',),
+                  
+                  contentPadding: EdgeInsets.only(left: 35),
+                  suffixIcon: Container
+                  (
+                    margin: EdgeInsets.only(right: 20),
+                    child: Icon
+                    (
+                      Icons.visibility_off,color: Colors.black,
+                    ),
+                  ),
+                  
+                ),
+              ),
+            ),
             Container
             (
               width: double.infinity,
@@ -139,7 +148,19 @@ class Signinpage extends StatelessWidget {
               
               child: ElevatedButton
               (
-                onPressed: (){},
+                onPressed: ()
+                {
+                  Navigator.push
+                  (
+                    context, MaterialPageRoute
+                    (
+                      builder: (context)
+                      {
+                        return Signinpage();
+                      }
+                    ),
+                  );
+                },
                 child: Text
                 ('Sign In',
                   style: TextStyle
@@ -155,51 +176,7 @@ class Signinpage extends StatelessWidget {
                 ),
               ),
             ),
-            Row
-            (
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: 
-              [
-                Text('Don\'t have an account?',style: TextStyle(),),
-                TextButton
-                (
-                  onPressed: ()
-                  {
-                    Navigator.push
-                  (
-                    context, MaterialPageRoute
-                    (
-                      builder: (context)
-                      {
-                        return Signuppage();
-                      }
-                    ),
-                  );
-                  }, 
-                  child: Text('Sign Up',style: TextStyle(color: Color(0xff1257fa)),))
-              ],
-            ),
-            Container
-            (
-              child: TextButton
-              (
-                onPressed: ()
-                {
-                  Navigator.push
-                  (
-                    context, MaterialPageRoute
-                    (
-                      builder: (context)
-                      {
-                        return Forgotpage();
-                      }
-                    ),
-                  );
-                },
-                child: Text
-                ('Forgot Password',textAlign: TextAlign.right,),
-              ),
-            ),
+            
           ],
         ),
       ),

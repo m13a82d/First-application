@@ -1,9 +1,9 @@
-import 'package:firstproject/forgotpage.dart';
+import 'package:firstproject/resetpasswordpage.dart';
 import 'package:firstproject/signuppage.dart';
 import 'package:flutter/material.dart';
 
-class Signinpage extends StatelessWidget {
-  const Signinpage({super.key});
+class Forgotpage extends StatelessWidget {
+  const Forgotpage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -87,9 +87,9 @@ class Signinpage extends StatelessWidget {
               margin: EdgeInsets.all(10),
               child: TextField
               (
-                
                 decoration: InputDecoration
                 (
+                  
                   border: OutlineInputBorder
                   (
                     borderRadius: BorderRadius.circular(30),
@@ -117,16 +117,8 @@ class Signinpage extends StatelessWidget {
                       color: Color(0xfff1f1fb)
                     ),
                   ),
-                  label: Text('Password',),
-                  contentPadding: EdgeInsets.only(left: 35),
-                  suffixIcon: Container
-                  (
-                    margin: EdgeInsets.only(right: 20),
-                    child: Icon
-                    (
-                      Icons.visibility_off,color: Colors.black,
-                    ),
-                  ),
+                  label: Text('Code sent to email',),
+                  contentPadding: EdgeInsets.only(left: 35)
                 ),
               ),
             ),
@@ -139,9 +131,21 @@ class Signinpage extends StatelessWidget {
               
               child: ElevatedButton
               (
-                onPressed: (){},
+                onPressed: ()
+                {
+                  Navigator.push
+                  (
+                    context, MaterialPageRoute
+                    (
+                      builder: (context)
+                      {
+                        return Resetpassword();
+                      }
+                    ),
+                  );
+                },
                 child: Text
-                ('Sign In',
+                ('Reset password',
                   style: TextStyle
                   (
                     color: Colors.white,
@@ -178,27 +182,6 @@ class Signinpage extends StatelessWidget {
                   }, 
                   child: Text('Sign Up',style: TextStyle(color: Color(0xff1257fa)),))
               ],
-            ),
-            Container
-            (
-              child: TextButton
-              (
-                onPressed: ()
-                {
-                  Navigator.push
-                  (
-                    context, MaterialPageRoute
-                    (
-                      builder: (context)
-                      {
-                        return Forgotpage();
-                      }
-                    ),
-                  );
-                },
-                child: Text
-                ('Forgot Password',textAlign: TextAlign.right,),
-              ),
             ),
           ],
         ),
